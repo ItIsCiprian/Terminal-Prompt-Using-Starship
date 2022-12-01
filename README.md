@@ -5,11 +5,14 @@ In my case, I like “Fira Code Nerd font”. Download the font and extract the 
 
 To install this font, go to your terminal and run the following command.
 
+```sh
 # Creating the local font directory in your system
 mkdir ~/.local/share/fonts
  
 # Moving the extracted fonts to local font directory
 mv FiraCode ~/.local/share/fonts/
+```
+
 Now FiraCode Nerd font becomes available in your system. You can also install other different types of fonts by following the above guide.
 
 If you like to read an in-depth guide on font installation on a Linux desktop, check out this article on how to install fonts in Ubuntu.
@@ -17,13 +20,17 @@ If you like to read an in-depth guide on font installation on a Linux desktop, c
 Install Starship
 To install starship, go to your home directory and run the following command.
 
+```sh
 curl -sS https://starship.rs/install.sh | sh
+```
 This command will download and install starship binary and add it to your path.
 
 Install Starship on Your Shell
 If you are using a bash shell, open your “~/.bashrc” file and paste this line of code at the end.
 
+```sh
 eval "$(starship init bash)"
+```
 If you are using Zsh, open your “~/.zshrc” file instead and paste the above line of code at the end of it.
 
 Now restart your terminal app. You will be greeted by the default starship prompt.
@@ -34,14 +41,18 @@ If you have some other shell rather than the above two, go to starship documenta
 Customize Starship
 To customize your shell prompt, create a “starship.toml” file in your config directory.
 
+```sh
 # Creating your .config directory if not existed
 mkdir -p ~/.config
  
 # Creating a new starship.toml file
 touch ~/.config/starship.toml
+```
 You can also change the default location of the starship configuration file. To change the default location of your starship configuration file, add the STARSHIP_CONFIG environment variable at the bottom of your “~/.bashrc” file.
 
+```sh
 export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
+```
 Concept of Module and Variable
 A module is a component in the terminal prompt, that gives you contextual information about the underlying operating system. For example, Nodejs is a module in the starship prompt. When we add this module to the config file, then it gives us different data points regarding the current installation of Nodejs in your environment.
 
@@ -89,14 +100,18 @@ Let’s add the python module to our starship configuration as a demo. open your
 
 Python module shows the information about python installation in your OS or if any virtual environment is activated. If you want to change the python icon and want to display the virtualenv name, then the configuration file looks like this.
 
+```sh
 [python]
 symbol = "🐍 "
 pyenv_version_name = true
+```
 If you have installed both python2 and python3, then you can specify the default python binary using starship configuration file.
 
+```sh
 [python]
 # Only use the `python3` binary to get the version.
 python_binary = "python3"
+```
 Like this example, you can add any module you want and customize them as per your imagination.
 
 How to Add Starship Presets
@@ -105,6 +120,7 @@ If you don’t want to do all those customization yourself, but want a good-look
 Starship Prompt Powerline 700px
 You can explore the official presets on this page. The above terminal prompt is uploaded by a user and available on the presets page. Now to make your terminal prompt look like this, open your starship config file and add this configuration to your file.
 
+```sh
 format = """
 [←](#9A348E)\
 $username\
@@ -229,20 +245,29 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
 format = '[[ 🤍 $time ](bg:#33658A)]($style)'
+```
 Restart your terminal and your terminal prompt look exactly like the prompt in the image. You can search for more terminal prompts presets and try which suits you the best. In the meantime, if you want to try out some bash tips and tricks, this article should be best suited for you.
 
 How to uninstall starship?
 To uninstall starship, first, delete your starship config file.
 
+```sh
 rm ~/.config/starship.toml
+```
 Then remove the line you have pasted during installation inside the “~/.bashrc” file.
 
 At last, uninstall the starship binary from your device.
 
+```sh
 sh -c 'rm "$(command -v 'starship')"'
+```
 Now relaunch your terminal and your prompt restored to the default style.
 
 Frequently Asked Questions
 How do I apply my current terminal prompt style to another device?
-It is very easy. Just copy your starship configuration file located in your ~/.config/starship.toml to the other device. Install starship, restart the terminal, and you are done.
+It is very easy. Just copy your starship configuration file located in your 
+```sh
+~/.config/starship.toml
+```
+to the other device. Install starship, restart the terminal, and you are done.
 
