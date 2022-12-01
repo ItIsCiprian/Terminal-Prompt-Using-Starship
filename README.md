@@ -35,9 +35,6 @@ If you are using Zsh, open your “~/.zshrc” file instead and paste the above 
 
 Now restart your terminal app. You will be greeted by the default starship prompt.
 
-Starship Demo 1
-If you have some other shell rather than the above two, go to starship documentation and find your preferred shell there.
-
 Customize Starship
 To customize your shell prompt, create a “starship.toml” file in your config directory.
 
@@ -65,14 +62,25 @@ The latter part is enclosed under ( ) and this is called style string. You can s
 
 Let’s take an example.
 
-[make_tech_easier](yellow bold) will print the string “make_tech_easier” with bold text and yellow color.
-[👍 All Done](green) will print “👍 All Done” in green color.
-[a [b](green) c](red) This is an example of nested text groups. It prints a and c in red and b in green.
+```sh[make_tech_easier](yellow bold)
+```
+will print the string “make_tech_easier” with bold text and yellow color.
+
+```sh[👍 All Done](green) 
+```
+will print “👍 All Done” in green color.
+```sh
+[a [b](green) c](red)
+```
+This is an example of nested text groups. It prints a and c in red and b in green.
+
 Some more Style Settings
+
 We can set different foregrounds and backgrounds for the text groups. [ ](fg:red bg:blue) make text font color red and background blue.
 We can also use ANSI colors in the config file. [ ](bold fg:27) represent bold text with ANSI 27 color as foreground color.
 If you like to add your hex color, then this is also possible. [ ](underline bg:#bf5700) gives an underlined text with a bright orange background color.
-Starship Demo 2
+
+
 Prompt Customization in Starship
 The prompt customization of starship has 4 options. We can change these 4 options to customize the prompt style.
 
@@ -82,6 +90,7 @@ command_timeout: Timeout for command executed by starship.
 add_newline: It is a boolean. If set true, it adds a blank line between shell prompt.
 A demo prompt customization file looks like this.
 
+```sh
 # Use custom format
 format = """
 [┌───────────────────>](bold green)
@@ -93,6 +102,7 @@ scan_timeout = 10
  
 # Disable the blank line at the start of the prompt
 add_newline = false
+```
 Add Your Desired Module
 Now as you know the basics of starship and how to customize it, you can add your desired module very easily. Keep in mind that any module will work if the files and folder related to this module will present at the given path. Simply, the python module will only be visible, if any python file is present inside the current working directory.
 
@@ -117,7 +127,7 @@ Like this example, you can add any module you want and customize them as per you
 How to Add Starship Presets
 If you don’t want to do all those customization yourself, but want a good-looking terminal prompt out of the box, you can use presets. Presets are simply starship configuration files shared by other users. You can import those presets to your config file and you have a nice-looking terminal prompt in just a moment.
 
-Starship Prompt Powerline 700px
+
 You can explore the official presets on this page. The above terminal prompt is uploaded by a user and available on the presets page. Now to make your terminal prompt look like this, open your starship config file and add this configuration to your file.
 
 ```sh
