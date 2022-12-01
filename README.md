@@ -79,9 +79,20 @@ This is an example of nested text groups. It prints a and c in red and b in gree
 
 Some more Style Settings
 
-We can set different foregrounds and backgrounds for the text groups. [ ](fg:red bg:blue) make text font color red and background blue.
-We can also use ANSI colors in the config file. [ ](bold fg:27) represent bold text with ANSI 27 color as foreground color.
-If you like to add your hex color, then this is also possible. [ ](underline bg:#bf5700) gives an underlined text with a bright orange background color.
+We can set different foregrounds and backgrounds for the text groups. 
+```sh
+[ ](fg:red bg:blue) 
+```
+make text font color red and background blue.
+We can also use ANSI colors in the config file. 
+```sh
+[ ](bold fg:27)
+```
+represent bold text with ANSI 27 color as foreground color.
+If you like to add your hex color, then this is also possible. 
+```sh[ ](underline bg:#bf5700)
+```
+gives an underlined text with a bright orange background color.
 
 
 Prompt Customization in Starship
