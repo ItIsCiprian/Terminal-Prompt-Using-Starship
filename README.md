@@ -62,13 +62,16 @@ The latter part is enclosed under ( ) and this is called style string. You can s
 
 Let’s take an example.
 
-```sh[make_tech_easier](yellow bold)
+```sh
+[make_tech_easier](yellow bold)
 ```
 will print the string “make_tech_easier” with bold text and yellow color.
 
-```sh[👍 All Done](green) 
+```sh
+[👍 All Done](green) 
 ```
 will print “👍 All Done” in green color.
+
 ```sh
 [a [b](green) c](red)
 ```
